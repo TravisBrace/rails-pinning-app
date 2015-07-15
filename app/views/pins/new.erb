@@ -1,0 +1,43 @@
+<div class="pin col-md-8">
+  
+  <%= form_for @pin do |f| %>
+    
+    <div class="form-group">
+      <div>
+        <h4><a label for="pin_title">Title</a></h4>
+      </div>
+      <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+    </div>
+    
+    <div class="form-group">
+      <div>
+        <h4><a label for="text">Text</a></h4>
+      </div>
+        <textarea <%= f.text_field :text, class: 'form-control', rows: '3', placeholder: 'Pin Text' %></textarea>
+    </div>
+    
+    <div>
+      
+      <div class="form-group">
+        <div>
+          <h4><a label for="pin_category_id">Category</a></h4>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+      </div>
+      
+      <div class="form-group">
+        <div>
+          <h4><a label for="slug">Slug</a></h4>
+        </div>
+        <%= f.text_field :slug, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+          <%= f.submit %>
+      </div>
+      
+    </div>
+    
+  <% end %>
+  
+</div>
