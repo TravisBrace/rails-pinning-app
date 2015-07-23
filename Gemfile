@@ -2,8 +2,12 @@ source 'https://rubygems.org'
 
 gem 'paperclip'
 
+gem 'bcrypt'
 
 gem 'aws-sdk', '< 2.0'
+
+#adds users with emails for test development
+gem 'factory_girl'
 
 gem 'rails_12factor'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
