@@ -1,4 +1,6 @@
 class PinsController < ApplicationController
+  before_action :require_login, except: [:index, :show, :show_by_name]
+  
   
   def index
     @pins = Pin.all
@@ -40,7 +42,7 @@ class PinsController < ApplicationController
     
     respond_to do |format|
       if @pin.update(pin_params)
-        format.html { redirect_to @pin, notice: 'Beer was successfully updated.' }
+        format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -52,7 +54,7 @@ class PinsController < ApplicationController
   private
   
   def pin_params
-    params.require(:pin).permit(:title, :url, :slug, :text, :resource_type, :category_id, :image)
+    params.require(:pin).permit(:title, :url, :slug, :text, :resource_type, :category_id, :image, :user_id)
   end
   
 end
