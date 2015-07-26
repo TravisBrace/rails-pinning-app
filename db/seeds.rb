@@ -39,7 +39,7 @@ Pin.create(
   slug: "ruby-monk",
   category: "ruby")
 User.create(
-  first_name: 'Example'
-  last_name: 'User'
-  email: 'user@example.com'
+  first_name: 'Example',
+  last_name: 'User',
+  email: 'user@example.com',
   password: 'password')
