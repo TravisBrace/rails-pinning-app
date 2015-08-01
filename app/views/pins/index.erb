@@ -28,6 +28,9 @@
             </div>
             <hr/>
             <p class="text"><%= "#{pin.text}" %></p>
+            <%= link_to repin_path(pin.id), method: "post" do %>
+              <i class="fa fa-retweet"></i>
+            <% end %>
           </div>
         </div>
       <% end %>
