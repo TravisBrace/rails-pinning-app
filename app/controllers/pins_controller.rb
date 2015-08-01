@@ -8,10 +8,12 @@ class PinsController < ApplicationController
   
   def show
     @pin = Pin.find(params[:id])
+    @users = Pin.find_by_slug(params[:slug]).users
   end
   
   def show_by_name
     @pin = Pin.find_by_slug(params[:slug])
+    @users = Pin.find_by_slug(params[:slug]).users
     render :show
   end
   
@@ -49,6 +51,12 @@ class PinsController < ApplicationController
         format.json { render json: @pin.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def repin
+    @pin = Pin.find(params[:id])
+    @pin.pinnings.create(user: current_user)
+    redirect_to user_path(current_user)
   end
   
   private

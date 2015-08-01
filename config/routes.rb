@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :sessions
   
+  post "pins/repin/:id" => "pins#repin", as: "repin"
+  
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
 
