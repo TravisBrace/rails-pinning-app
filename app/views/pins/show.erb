@@ -16,10 +16,8 @@
     </a>
   </p>
   <div>
-  <%= link_to repin_path(@pin), class: "btn btn-default", method: "post" do %>
-    <i class="fa fa-retweet"></i>
-    Repin!
-  <% end %>
+  
+  <%= render partial: "shared/repin_form" %>
 
 </div>
 <br/>

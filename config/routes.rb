@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :boards
+
   resources :sessions
   
   post "pins/repin/:id" => "pins#repin", as: "repin"

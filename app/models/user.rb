@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :pinnings
   has_many :pins, through: :pinnings
+  has_many :boards
   
   attr_accessor :password
   before_save :encrypt_password
