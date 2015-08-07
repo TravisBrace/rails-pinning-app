@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <%= form_for @pin, action: repin_path(@pin) do |f| %>
-    <%= f.fields_for :pinning, pin.pinning.create do |p| %>
+    <%= f.fields_for :pinning do |p| %>
       Repin to one of your boards?
       <%= p.collection_select(:board_id, current_user.boards, :id, :name, {}, {class: "form-control"}) %>
       <%= p.hidden_field :user_id, value: current_user.id %>
