@@ -1,10 +1,8 @@
 <% if logged_in? %>
-  <%= form_for @pin, action: repin_path(@pin) do |f| %>
-    <%= f.fields_for :pinning do |p| %>
+  <%= form_for @pinning, method: "post" do |f| %>
       Repin to one of your boards?
-      <%= p.collection_select(:board_id, current_user.boards, :id, :name, {}, {class: "form-control"}) %>
-      <%= p.hidden_field :user_id, value: current_user.id %>
-    <% end %>
+      <%= f.collection_select(:board_id, current_user.boards, :id, :name, {}, {class: "form-control"}) %>
+      <%= f.hidden_field :pin_id, value: @pin.id %>
     <%= f.button :submit, class: "btn btn-default pinterest-theme-button" do %>
       <i class="fa fa-diamon"></i>
       Repin!

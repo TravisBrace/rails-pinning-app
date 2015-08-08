@@ -14,6 +14,7 @@ class PinsController < ApplicationController
   def show_by_name
     @pin = Pin.find_by_slug(params[:slug])
     @users = Pin.find_by_slug(params[:slug]).users
+    @pinning = current_user.pinnings.build
     render :show
   end
   
@@ -62,7 +63,7 @@ class PinsController < ApplicationController
   private
   
   def pin_params
-    params.require(:pin).permit(:title, :url, :slug, :text, :resource_type, :category_id, :image, :user_id, :pinning)
+    params.require(:pin).permit(:title, :url, :slug, :text, :resource_type, :category_id, :image, :user_id, pinnings_attributes: [:user_id, :board_id])
   end
   
 end
