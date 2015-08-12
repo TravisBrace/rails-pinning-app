@@ -12,17 +12,7 @@
     <%= content_tag :div, msg, :id => "flash#{name}" %>  
   <% end %>  
   <% if logged_in? %>
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle pull-right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Boards
-        <span class="caret"></span>
-       </button>
-      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-        <% current_user.boards.each do |board| %>
-          <li><%= link_to "#{board.name}", board_path(id: board.id) %></li>
-        <% end %>
-      </ul>
-    </div>
+    
  <!-- <div class="pull-right">
     <h3>
       <%= "Welcome back #{current_user.first_name}!" %>
@@ -30,7 +20,8 @@
     </h3>
   </div> -->
   <% end %>
-  <div class="container">
+  <%= render "layouts/navbar" %>
+  <div class="right ">
     <%= yield %>
   </div>
 </body>
