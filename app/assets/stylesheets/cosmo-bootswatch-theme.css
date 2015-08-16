@@ -46,7 +46,7 @@ template {
   display: none;
 }
 a {
-  background-color: transparent;
+  color: #165ba8;
 }
 a:active,
 a:hover {
