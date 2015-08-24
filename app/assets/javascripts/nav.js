@@ -12,7 +12,11 @@ var main = function () {
     $('.right').toggleClass('right-open');
     $('.tab').toggleClass('tab-open')
   });
-
+  
+  $('.board-button').click(function(){
+    $('.board-menu').toggle('.board-list');
+  });
+  
 }
 
 $(document).ready(main)

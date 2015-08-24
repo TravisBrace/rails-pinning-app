@@ -11,6 +11,7 @@
   margin-top: 5px;
   z-index: -1;
   transition: margin-left 0.5s ease;
+  box-shadow: 5px 5px 10px #888888;
 }
 
 .tab-open {
@@ -19,7 +20,7 @@
 
 .left {
   position: fixed;
-
+  box-shadow: 5px 0px 10px #888888;
   top: 0; left: 0;
   width: 0px;
   height: 100%;
@@ -45,14 +46,22 @@
     li {
       display: block;
       width: 100px;
-      line-height: 1.6;
+      line-height: 2.6;
       height: 100%;
       padding: 0 !important;
       margin-right: 10px;
+      
+      i {margin: auto;}      
     }
+    
     li:hover { 
       background: #A9A9A9;
+     
+      .left a:hover {
+        color: #FFFFFF !important;
+      }
     }
+    
   }
 
   .left a {
@@ -62,10 +71,12 @@
     width: 60px;
     height: 50px;
     margin: auto;
+    color: #CCCCCC !important;
   }
 
   .left a:hover {
     background-color: #a9a9a9 !important;
+    color: #FFFFFF !important;
   }
   
 .right {
@@ -82,4 +93,7 @@
 .right-open {
   margin-left: 120px !important;
   display: block;
+}
+
+.board-list { 
 }

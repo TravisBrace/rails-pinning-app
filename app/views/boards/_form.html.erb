@@ -12,11 +12,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="form-container">
+    <div class="margin-container">  
+      <div class="group">
+        <%= f.text_field :name, required: true %>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <%= f.label :name %><br>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
   </div>
 <% end %>

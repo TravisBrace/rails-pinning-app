@@ -1,4 +1,4 @@
-<div class="pin">
+<div class="form-container">
 
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
@@ -12,26 +12,37 @@
         </ul>
       </div>
     <% end %>
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= f.label :first_name %><br>
-        <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name' %>
+    <div class="margin-container">
+      <div class="group">
+        <%= f.text_field :first_name, required: true %>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <%= f.label :first_name%>
       </div>
-      <div class="form-group">
-        <%= f.label :last_name %><br>
-        <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name' %>
+      <div class="group">
+        <%= f.text_field :last_name, required: true %>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <%= f.label :last_name %>
       </div>
-      <div class="form-group">
-        <%= f.label :email %><br>
-        <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+      <div class="group">
+        <%= f.text_field :email, required: true %>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <%= f.label :email %>
       </div>
-      <div class="form-group">
-        <%= f.label :password %><br>
-        <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+      <div class="group">
+        <%= f.password_field :password, required: true %>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <%= f.label :password %>
       </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation %><br>
-        <%= f.password_field :pasword_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
+      <div class="group">
+        <%= f.password_field :password_confirmation, required: true %>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <%= f.label :password_confirmation %>
+      </div>
       <div class="actions">
         <%= f.submit %>
       </div>

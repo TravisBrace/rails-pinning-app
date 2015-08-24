@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, except: [:show, :show_by_name, :index]
+  before_action :require_login, except: [:show, :show_by_name, :index, :new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
 
@@ -68,6 +68,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password_hash, :password, :first_name, :last_name, :pinning)
+      params.require(:user).permit(:email, :password_confirmation, :password_hash, :password, :first_name, :last_name, :pinning)
     end
 end
